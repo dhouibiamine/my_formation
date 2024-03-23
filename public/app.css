@@ -1,0 +1,5 @@
+body {
+    background-color: #d42020; /* Couleur de fond */
+    background-image: url('/frm.jpg'); /* Image de fond */
+    background-size: cover; /* Ajuster la taille de l'image */
+}

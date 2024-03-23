@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}my_academic_project{% endblock %}
+
+{% block body %}
+    <h1 style="color: red;">Modifier la formation</h1>
+     <body style="background-color: yellow;"> 
+
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.titre) }}
+    {{ form_row(form.price) }}
+    {{ form_row(form.duree) }}
+    {{ form_row(form.begin_at) }}
+
+    <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+
+    {{ form_end(form) }}
+
+    <a href="{{ path('liste_formation') }}" class="btn btn-secondary mt-3">Retour à la liste des formations</a>
+{% endblock %}

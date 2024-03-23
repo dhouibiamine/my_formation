@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}my_academic_project{% endblock %}
+
+{% block body %}
+<body style="background-color: yellow;"> 
+
+
+
+   <div class="container">
+  
+        
+        <h1 class="my-4" style="color: red;">Liste des Formation</h1>
+          <a href="{{ path('ajouter') }}" class="btn btn-secondary">ajouter formation</a>
+         
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">titre</th>
+                    <th scope="col">price</th>
+                    <th scope="col">duree</th>
+                    <th scope="col">Date debut</th>
+
+
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for formation in formations %}
+                    <tr>
+                        <td>{{ formation.titre }}</td>
+                        <td>{{ formation.price }}</td>
+                        <td>{{ formation.duree }}</td>
+                        <td>{{ formation.getBeginAt()|date('d-m-Y') }}</td>
+                        <td>
+                            <a   href="{{ path('formation_show', {'id': formation.id}) }}"class="btn btn-info">Show</a>
+                            <a href="{{ path('edit_formation', {'id': formation.id}) }}" class="btn btn-primary">Modifier</a>
+                          
+                          <a href="{{ path('liste_participant', {'formationId': formation.id}) }}">Liste des Participants</a>
+
+
+                         
+
+
+                                  
+
+                      
+
+
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    
+
+{% endblock %}

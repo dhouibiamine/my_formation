@@ -1,0 +1,16 @@
+{# templates/participant/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}my_academic_project{% endblock %}
+
+{% block body %}
+    <h1 style="color: red;">Éditer le participant</h1>
+     <body style="background-color: yellow;"> 
+
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Enregistrer les modifications</button>
+    {{ form_end(form) }}
+{% endblock %}

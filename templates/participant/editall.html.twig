@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}my_academic_project{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Modifier tous les participants</h1>
+
+        <form method="post" action="{{ path('edit_all_participants') }}">
+            {{ form_start(form) }}
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Nouveau Nom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for participant in participants %}
+                        <tr>
+                            <td>{{ participant.nom }}</td>
+                            <td>{{ form_row(form.participants[participant.id].nom) }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+
+            {{ form_end(form) }}
+        </form>
+    </div>
+{% endblock %}

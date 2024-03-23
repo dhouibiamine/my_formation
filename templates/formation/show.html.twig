@@ -1,0 +1,24 @@
+{# templates/formation/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}my_academic_project{% endblock %}
+
+{% block body %}
+<body style="background-color: yellow;"> 
+
+    <h2 style="color: red;">Les Détails de la Formation</h2>
+
+    <dl>
+        <dt>Titre:</dt>
+        <dd>{{ formation.titre }}</dd>
+
+        <dt>Prix:</dt>
+        <dd>{{ formation.price }}</dd>
+
+        <dt>Durée:</dt>
+        <dd>{{ formation.duree }}</dd>
+
+        <dt>Date de début:</dt>
+        <dd>{{ formation.getBeginAt()|date('Y-m-d') }}</dd>
+    </dl>
+{% endblock %}

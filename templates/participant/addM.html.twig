@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    my_academic_project
+{% endblock %}
+{% block body %}
+ <body style="background-color: yellow;"> 
+
+<h2 style="color: red;">Ajouter une participant</h2>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{{ form_errors(form) }}
+{% endblock %}
